@@ -2,6 +2,8 @@
 
 from __future__ import unicode_literals
 import time
+from os.path import expanduser
+HOME = expanduser("~")
 
 # Configuration, please edit
 
@@ -10,12 +12,12 @@ BLOG_AUTHOR = "Renato Coutinho"
 BLOG_TITLE = "BioIFT tutorials"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://renatocoutinho.github.io/"
+SITE_URL = "http://mathbio.github.io/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 BASE_URL = SITE_URL
 BLOG_EMAIL = "renato.coutinho@gmail.com"
-BLOG_DESCRIPTION = "This is a demo site for Nikola."
+BLOG_DESCRIPTION = "Interesting stuff on Mathematical Biology"
 
 # Nikola is multilingual!
 #
@@ -198,7 +200,7 @@ ONE_FILE_POSTS = False
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
-CREATE_SINGLE_ARCHIVE = True
+# CREATE_SINGLE_ARCHIVE = True
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
@@ -243,7 +245,7 @@ CREATE_SINGLE_ARCHIVE = True
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
 # to the location of conf.py
-OUTPUT_FOLDER = '/home/renato/renatocoutinho.github.com/'
+OUTPUT_FOLDER = HOME + '/mathbio.github.io/'
 
 # where the "cache" of partial generated content should be located
 # default: 'cache'
