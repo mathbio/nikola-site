@@ -39,7 +39,13 @@ This command creates two new files inside the `posts/` folder, one with a `.meta
 
     nikola build
 
-and, if everything went right, the new post is built. Now we have to sync the github repos. We are still in the `nikola-site` folder, so let us do it first:
+and, if everything went right, the new post is built. Let's see if everything is still in order: run
+
+    nikola serve
+
+and point your browser to http://127.0.0.1:8000 (this is your own computer!). Check that the site looks normal and your post showed up fine. Then you can kill the `nikola serve` process (hit Ctrl-C).
+
+Finally we have to sync the github repos. We are still in the `nikola-site` folder, so let us do it first:
 
     git add posts/*
     git commit -m "Adding post foo..."
