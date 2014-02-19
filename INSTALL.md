@@ -6,6 +6,12 @@ We describe step-by-step how to get a Nikola site using ipython notebooks as sou
 * install virtualenv: http://www.virtualenv.org/en/latest/virtualenv.html#installation
 * create virtualenv: `virtualenv nikolapy`
 * install packages: `nikolapy/bin/pip install nikola jinja2 ipython`
+
+or, to install the latest version of Nikola (from git - this is actually recommended by the developers):
+
+    git clone git://github.com/getnikola/nikola.git
+    nikolapy/bin/pip install nikola/
+
 * it may be useful to permanently `alias nikola=$PWD/nikolapy/bin/nikola`
 * install pandoc: http://johnmacfarlane.net/pandoc/installing.html (on arch,
 install `pandoc-static` from the AUR)
