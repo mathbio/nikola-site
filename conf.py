@@ -129,17 +129,17 @@ NAVIGATION_LINKS = {
 #
 
 POSTS = (
-    ("posts/*.rst", "posts", "post.tmpl"),
-    ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.ipynb", "posts", "post.tmpl"),
     ("posts/*.md", "posts", "post.tmpl"),
+    ("posts/*.rst", "posts", "post.tmpl"),
+    ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.html", "posts", "post.tmpl"),
 )
 PAGES = (
+    ("stories/*.md", "stories", "story.tmpl"),
+    ("stories/*.ipynb", "stories", "story.tmpl"),
     ("stories/*.rst", "stories", "story.tmpl"),
     ("stories/*.txt", "stories", "story.tmpl"),
-    ("stories/*.ipynb", "stories", "story.tmpl"),
-    ("stories/*.md", "stories", "story.tmpl"),
     ("stories/*.html", "stories", "story.tmpl"),
 )
 
@@ -329,7 +329,7 @@ THEME = "ipython"
 # "assets/css/code.css" this is ignored.
 # Can be any of autumn borland bw colorful default emacs friendly fruity manni
 # monokai murphy native pastie perldoc rrt tango trac vim vs
-CODE_COLOR_SCHEME = 'emacs'
+#CODE_COLOR_SCHEME = 'emacs'
 
 # If you use 'site-reveal' theme you can select several subthemes
 # THEME_REVEAL_CONFIG_SUBTHEME = 'sky'
@@ -614,6 +614,9 @@ RSS_TEASERS = False
 
 # Additional metadata that is added to a post when creating a new_post
 # ADDITIONAL_METADATA = {}
+ADDITIONAL_METADATA = {
+            'author': 'Renato Coutinho'
+            }
 
 # Nikola supports Twitter Card summaries / Open Graph.
 # Twitter cards make it possible for you to attach media to Tweets
