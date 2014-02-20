@@ -398,7 +398,7 @@ COMMENT_SYSTEM_ID = "biomathgithub"
 # setting the "annotations" metadata.
 # If set to True, you can disable them for individual posts and pages using
 # the "noannotations" metadata.
-ANNOTATIONS = True
+ANNOTATIONS = False
 
 # Create index.html for story folders?
 # STORY_INDEX = False
