@@ -3,6 +3,7 @@
 # cache folder
 cache/
 .doit.db
+last_commit
 
 # C extensions
 *.so
