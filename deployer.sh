@@ -15,6 +15,8 @@ check_new_posts(){
             # some trickery to get the metadata file name
             FNAME=$(nikola new_post -f ipynb -t "$TITLE" | tail -n1 | rev | cut -d' ' -f1 | rev)
             mv -f "${TITLE}.ipynb" "${FNAME%meta}ipynb"
+            git add \*ipynb posts/*
+            git commit -m "AUTO: handling post ${TITLE}"
         fi
     done
 
@@ -41,7 +43,11 @@ then
         if [ $? -eq 0 ]
         then
             git push
-            echo "$CUR" > $NIKOLA_REPO/$COMMIT_FILE
+
+            pushd $NIKOLA_REPO
+            NEWCUR=$(git log -n1 | head -n1 | cut -d' ' -f2)
+            echo "$NEWCUR" > $COMMIT_FILE
+            popd
         fi
     fi
 fi
