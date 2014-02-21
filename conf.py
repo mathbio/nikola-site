@@ -17,7 +17,7 @@ SITE_URL = "http://mathbio.github.io/"
 # If not set, defaults to SITE_URL
 BASE_URL = SITE_URL
 BLOG_EMAIL = "renato.coutinho@gmail.com"
-BLOG_DESCRIPTION = "Interesting stuff on Mathematical Biology"
+BLOG_DESCRIPTION = "Interesting stuff on Mathematical Biology."
 
 # Nikola is multilingual!
 #
@@ -363,7 +363,7 @@ INDEX_TEASERS = True
 # {read_more}   The string “Read more” in the current language.
 # {{            A literal { (U+007B LEFT CURLY BRACKET)
 # }}            A literal } (U+007D RIGHT CURLY BRACKET)
-READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
+READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}</a></p>'
 
 # A HTML fragment describing the license, for the sidebar.
 #LICENSE = ""
@@ -426,7 +426,7 @@ ANNOTATIONS = False
 # If this is False
 # e.g. /2012 includes only /01, /02, /03, /04, ...: don't add it to the sitemap
 # if /2012 includes any files (including index.html)... add it to the sitemap
-# SITEMAP_INCLUDE_FILELESS_DIRS = True
+SITEMAP_INCLUDE_FILELESS_DIRS = False
 
 # Instead of putting files in <slug>.html, put them in
 # <slug>/index.html. Also enables STRIP_INDEXES
