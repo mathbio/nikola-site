@@ -3,6 +3,7 @@
 COMMIT_FILE="last_commit"
 NIKOLA_REPO="$HOME/github.io/"
 PAGES_REPO="$HOME/mathbio.github.io/"
+NIKOLA="$HOME/nikpy/bin/nikola"
 
 check_new_posts(){
     pushd $NIKOLA_REPO
@@ -13,7 +14,7 @@ check_new_posts(){
             TITLE=$(basename "$i" .ipynb)
             mv "$i" "${TITLE}.ipynb"
             # some trickery to get the metadata file name
-            FNAME=$(nikola new_post -f ipynb -t "$TITLE" | tail -n1 | rev | cut -d' ' -f1 | rev)
+            FNAME=$($NIKOLA new_post -f ipynb -t "$TITLE" | tail -n1 | rev | cut -d' ' -f1 | rev)
             mv -f "${TITLE}.ipynb" "${FNAME%meta}ipynb"
             git add \*ipynb posts/*
             git commit -m "AUTO: handling post ${TITLE}"
@@ -33,7 +34,7 @@ OLD=$(<$COMMIT_FILE)
 if [ "$CUR" != "$OLD" ]
 then
     check_new_posts
-    nikola build
+    $NIKOLA build
     if [ $? -eq 0 ]
     then
         MESSAGE=$(git log --pretty=oneline  "${OLD}..HEAD" | cut -d' ' -f 2- | xargs echo -n)
@@ -49,6 +50,8 @@ then
             echo "$NEWCUR" > $COMMIT_FILE
             popd
         fi
+    else
+        git checkout posts/
     fi
 fi
 
