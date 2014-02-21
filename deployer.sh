@@ -12,10 +12,12 @@ check_new_posts(){
         if [ ! -e "${i%ipynb}meta" ]
         then
             TITLE=$(basename "$i" .ipynb)
+            # we need to take the file out of the posts/ folder
             mv "$i" "${TITLE}.ipynb"
             # some trickery to get the metadata file name
             FNAME=$($NIKOLA new_post -f ipynb -t "$TITLE" | tail -n1 | rev | cut -d' ' -f1 | rev)
-            mv -f "${TITLE}.ipynb" "${FNAME%meta}ipynb"
+            mv "${TITLE}.ipynb" "$i"
+            git mv -f "${TITLE}.ipynb" "${FNAME%meta}ipynb"
             git add \*ipynb posts/*
             git commit -m "AUTO: handling post ${TITLE}"
         fi
