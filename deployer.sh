@@ -11,10 +11,10 @@ check_new_posts(){
         if [ ! -e "${i%ipynb}meta" ]
         then
             TITLE=$(basename "$i" .ipynb)
-            mv "$i" ${TITLE}.ipynb
+            mv "$i" "${TITLE}.ipynb"
             # some trickery to get the metadata file name
             FNAME=$(nikola new_post -f ipynb -t "$TITLE" | tail -n1 | rev | cut -d' ' -f1 | rev)
-            mv -f ${TITLE}.ipynb "posts/${FNAME%meta}ipynb"
+            mv -f "${TITLE}.ipynb" "${FNAME%meta}ipynb"
         fi
     done
 
