@@ -30,7 +30,7 @@ OLD=$(<$COMMIT_FILE)
 
 if [ "$CUR" != "$OLD" ]
 then
-    check_new_posts()
+    check_new_posts
     nikola build
     if [ $? -eq 0 ]
     then
